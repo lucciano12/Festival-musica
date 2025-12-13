@@ -1,0 +1,67 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.header {
+  background-color: v.$amarillo;
+
+  @include m.tablet {
+    &.fijo {
+      left: 0;
+      top: 0;
+      position: fixed;
+      width: 100%;
+      box-shadow: 0.1rem 0.2rem 0.3rem #333;
+    }
+  }
+
+  h1 {
+    color: v.$rojo;
+    text-align: center;
+    @include m.tablet {
+      margin: 0; //Ya que por defecto los heading tienen margen y se lo eliminamos
+    }
+  }
+
+  .contenido-header {
+    padding: 2rem;
+    @include m.tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; //Alinea los item y el header
+    }
+  }
+}
+
+.navegacion-principal {
+  @include m.tablet {
+    display: flex;
+    gap: 2rem;
+  }
+
+  a {
+    display: block;
+    text-align: center;
+    color: v.$rojo;
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+    @include m.tablet {
+      //Para eliminar el margin entre los enlaces
+      margin: 0rem;
+    }
+
+    &:hover {
+      // & con esto decimos que unimos la clase para el css
+      color: v.$azul;
+    }
+  }
+}
+
+//*** COMO REFERENCIA
+
+/* .prueba{
+  @include m.heading(v.$amarillo, true); //De esta manera llamamos a mixins o la reutilizacion de codigo en sass (ejemplo bloque de codigo botones)
+}
+
+.text{
+  @include m.heading;
+} */

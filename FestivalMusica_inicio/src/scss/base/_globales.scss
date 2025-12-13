@@ -1,0 +1,67 @@
+@use "variables" as v; //Carga las funciones y variables
+
+html {
+  font-size: 62.5%; //1 rem = 10px
+  box-sizing: border-box; //snipet de polaris
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; //snipet de polaris. Evitamos problemas del padding
+}
+
+body {
+  font-family: v.$fuente_principal; //Tipo de fuente
+  font-size: 1.6rem; //El tamaño de la fuente
+
+  &.fijar-body{
+    overflow: hidden;
+  }
+
+  &.body-scroll{
+    padding-top: 8.6rem;
+  }
+}
+
+p {
+  font-size: 2rem;
+  color: v.$negro;
+  list-style: 1.5rem;
+}
+
+.contenedor {
+  width: 95%;
+  max-width: 120rem; /* un limite de ancho 1200px */
+  margin: 0 auto; //Lo centramos
+  
+}
+
+a {
+  text-decoration: none; //Decoracion en los texto, este caso, se elimina la linea inferior de cada palabra o enlaces
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 5rem 0; // 0 arriba, 0 derecha, 5 rem abajo y 0 izq
+}
+
+h1{
+  font-size: 4rem;
+}
+
+h2{
+  font-size: 3.6rem;
+}
+
+h3{
+  font-size: 3rem;
+}
+
+img{ //Con esto hacemos que la imagen sea responsive
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+}

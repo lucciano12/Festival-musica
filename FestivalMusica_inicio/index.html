@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rolling Loud Chile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+<link rel="stylesheet" href="build/css/app.css">
+
+<body>
+
+    <!-- <div class="scroll_vertical"> -->
+
+
+    <header class="header">
+        <div class="contenedor contenido-header">
+            <h1>Rolling Loud Chile</h1>
+
+            <nav class="navegacion-principal">
+                <a href="#lineup">Line Up</a>
+                <a href="#galeria">Galeria</a>
+                <a href="#boletos">Boletos</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="video">
+        <div class="overlay">
+            <div class="contenedor contenido-video">
+                <h2>Rolling Loud Chile</h2>
+                <p>Julio 2023, Santiago, Chile</p>
+            </div>
+        </div>
+
+        <video autoplay muted loop> <!-- Escribimos muted para que este en silencio en caso que la pagina esta alojado en un servidor. controls para darle control al video pausar, reproducir y audio.
+                ya que para que se reproduzca el video automaticamente tiene que estar en muted -->
+            <source src="video/concierto.mp4" type="video/mp4">
+            <source src="video/concierto.ogg" type="video/ogg">
+            <source src="video/concierto.webm" type="video/webm">
+        </video>
+
+    </div>
+
+
+    <div class="background">
+        <section class="contenedor sobre-festival">
+            <div class="imagen">
+                <picture>
+                    <source srcset="build/img/artista.avif" type="image/avif">
+                    <!-- Con esto definimos distinta ruta para cada formato -->
+                    <source srcset="build/img/artista.webp" type="image/webp">
+
+                    <img loading="lazy" width="200" height="300" src="build/img/artista.avif" alt="imagen artista">
+                    <!-- Con esto lo cargamos si no soporta avif-->
+                </picture>
+
+
+            </div>
+
+            <div class="contenido-festival">
+                <h2>Rolling Loud Chile</h2>
+                <p class="fecha">Julio 2023, Santiago, Chile</p>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum quos ullam ab consequuntur vero
+                    dolorum numquam sit, aut tempore fugit aspernatur commodi dolor labore itaque alias hic nobis
+                    debitis quod!
+                </p>
+            </div>
+        </section>
+
+
+        <section id="lineup" class="lineup">
+            <h3>Line Up</h3>
+
+            <p class="dia">Viernes 21</p>
+
+            <div class="escenarios-contenedor contenedor">
+                <div class="escenario carozzi bg-amarillo">
+                    <p class="nombre-escenario">Escenario Carozzi</p>
+
+                    <ul class="calendario">
+                        <li>
+                            23:00 | <span>Ye</span>
+                        </li>
+                        <li>
+                            22:00 | <span>Playboi Cardi</span>
+                        </li>
+                        <li>
+                            20:00 | <span>Lil Durk</span>
+                        </li>
+                        <li>
+                            19:00 | <span>Don Toliver</span>
+                        </li>
+                        <li>
+                            18:00 | <span>2 Chainz</span>
+                        </li>
+                        <li>
+                            17:00 | <span>Three 6 Mafia</span>
+                        </li>
+                    </ul>
+                </div><!-- .escenario -->
+
+                <div class="escenario VTR bg-verde">
+                    <p class="nombre-escenario">Escenario VTR</p>
+
+                    <ul class="calendario">
+                        <li>
+                            23:00 | <span>Future</span>
+                        </li>
+                        <li>
+                            22:00 | <span>Lil UZI Vert</span>
+                        </li>
+                        <li>
+                            20:00 | <span>DaBaBY</span>
+                        </li>
+                        <li>
+                            19:00 | <span>Gucci Mane</span>
+                        </li>
+                        <li>
+                            18:00 | <span>Ski Mask the Slump GOD</span>
+                        </li>
+                        <li>
+                            17:00 | <span>Denzel Curry</span>
+                        </li>
+                    </ul>
+                </div><!-- .escenario -->
+
+            </div><!-- escenarios-contenedor -->
+
+            <p class="dia">Sabado 22</p>
+
+            <div class="escenarios-contenedor contenedor">
+                <div class="escenario carozzi bg-verde">
+                    <p class="nombre-escenario">Escenario Carozzi</p>
+
+                    <ul class="calendario">
+                        <li>
+                            23:00 | <span>Kendrick Lamar</span>
+                        </li>
+                        <li>
+                            22:00 | <span>Lil Baby</span>
+                        </li>
+                        <li>
+                            20:00 | <span>Kodak Black</span>
+                        </li>
+                        <li>
+                            19:00 | <span>Baby KEEM</span>
+                        </li>
+                        <li>
+                            18:00 | <span>$uicideboy$</span>
+                        </li>
+                        <li>
+                            17:00 | <span>Trippie Redd</span>
+                        </li>
+                    </ul>
+                </div><!-- .escenario -->
+
+                <div class="escenario VTR bg-amarillo">
+                    <p class="nombre-escenario">Escenario VTR</p>
+
+                    <ul class="calendario">
+                        <li>
+                            23:00 | <span>A$AP Rocky</span>
+                        </li>
+                        <li>
+                            22:00 | <span>21 Savage</span>
+                        </li>
+                        <li>
+                            20:00 | <span>Mobb Deep</span>
+                        </li>
+                        <li>
+                            19:00 | <span>Rick Ross</span>
+                        </li>
+                        <li>
+                            18:00 | <span>$not</span>
+                        </li>
+                        <li>
+                            17:00 | <span>Flatbush ZOMBiES</span>
+                        </li>
+
+                    </ul>
+                </div><!-- .escenario -->
+            </div><!-- escenarios-contenedor -->
+
+
+        </section>
+
+        <section id="galeria" class="galeria contenedor">
+            <h3>Galeria</h3>
+
+            <ul class="galeria-imagenes"></ul>
+        </section>
+
+        <section id="boletos" class="boletos">
+            <h3>Boletos</h3>
+
+            <div class="contenedor contenedor-boletos">
+                <div class="basico pase">
+                    <p class="nombre-pase">Pase 1 Día</p>
+
+                    <header class="pase-header">
+                        <p>Incluye</p>
+                    </header>
+                    <div class="pase-body">
+                        <ul>
+                            <li>Acceso a ambos escenarios</li>
+                            <li>Comida y Bebida</li>
+                        </ul>
+                    </div>
+                    <footer class="pase-footer">
+                        <p>$33.000</p>
+                    </footer>
+                </div>
+
+                <div class="premium pase">
+                    <p class="nombre-pase">Pase 2 Días</p>
+
+                    <header class="pase-header">
+                        <p>Incluye</p>
+                    </header>
+                    <div class="pase-body">
+                        <ul>
+                            <li>Acceso a ambos escenarios</li>
+                            <li>Comida y Bebida</li>
+                            <li>Camisa del Evento</li>
+                            <li>Acceso VIP</li>
+                        </ul>
+                    </div>
+
+                    <footer class="pase-footer">
+                        <p>$90.000</p>
+                    </footer>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="site-footer">
+        <p>
+            Rolling Loud Chile. Todos los derechos reservados
+        </p>
+    </footer>
+
+
+    <!--COMO REFERENCIA -->
+    <!-- <h1 class="prueba">Probando Mixin</h1>-->
+    <!-- </div> -->
+    <script src="build/js/app.js"></script>
+
+</body>
+
+</html>

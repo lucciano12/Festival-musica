@@ -1,0 +1,54 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.video {
+  //Selecciona la clase video
+  position: relative;
+  max-height: 70rem;
+  min-height: 50rem;
+  overflow: hidden;
+  background-color: v.$negro;
+
+
+  .overlay {
+    position: absolute;
+    background: rgb(219, 19, 29);
+    background: linear-gradient(
+      270deg,
+      rgba(219, 19, 29, 0.04534313725490191) 97%,
+      rgba(232, 19, 8, 0.08735994397759106) 100%
+    );
+    height: 100%;
+    width: 100%;
+
+    //Posicionar verticalmente
+    display: flex;
+    flex-direction: column;
+    justify-content: center; //Alinear verticalmente
+  }
+
+  video { //Selecciona la etiqueta video
+    width: auto;
+    display: block; //Para tomar todo el espacio hacia abajo
+    @include m.telefono {
+      width: 100%; //Ajustamos el video 100% a la pagina o pantalla
+    }
+  }
+}
+
+.contenido-video {
+  z-index: 10; //Se super poniendo la etiqueta para que sea seleccionada. Osea la hoja del titulo esta mas adelante o arriba (Como lo quieres ver) que el video del alfondo
+  h2 {
+    color: v.$rojo;
+    font-size: 5rem;
+    margin: 0;
+  }
+  p {
+    /* background-color: v.$rosa;
+    display: inline-block;
+    padding: 1rem 2rem; */
+    color: v.$blanco;
+    font-weight: 700;
+    font-size: 2.4rem;
+  }
+}

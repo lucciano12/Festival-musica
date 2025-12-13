@@ -1,0 +1,60 @@
+//Mixin es un pedazo de codigo css que puedes reutilizar en multiples lugares
+@use 'variables' as v;
+
+//** COMO REFERENCIA 
+
+/* @mixin heading($color: blue, $borde-radius: false){ //El color lo ponemos por defecto en el caso que no mandamos como parametro a heading
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  color: $color;
+  letter-spacing: 1px;
+  background-color: black;
+
+  @if $borde-radius{ //Aca evalua si esta border-radius como true hace lo que esta adentro, caso contrario es por que esta por defecto false
+    border-radius: 1rem;
+  }
+} */
+
+//** MEDIA QUERY **//
+
+@mixin telefono{
+  @media (min-width: v.$telefono){ 
+    @content; //Todo lo que se escriba en el @include ... {"AQUI ADENTRO"}, se inyecta aqui en el media
+  }
+} 
+
+@mixin tablet{
+  @media (min-width: v.$tablet){ 
+    @content;
+  }
+} 
+
+@mixin desktop{
+  @media (min-width: v.$desktop){ 
+    @content; 
+  }
+}
+
+@mixin desktopXL{
+  @media (min-width: v.$desktopXL){ 
+    @content; 
+  }
+} 
+
+@mixin telefonoEspecial{
+  @media only screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin grid($columnas, $espaciado){
+  display: grid;
+  grid-template-columns: repeat($columnas, 1fr);
+  gap: $espaciado;
+}
+
+@mixin resetear-lista{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
