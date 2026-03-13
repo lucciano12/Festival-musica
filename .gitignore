@@ -1,0 +1,23 @@
+# Dependencias
+node_modules/
+
+# Archivos compilados por Gulp
+build/
+
+# Archivos del sistema operativo
+.DS_Store
+._.DS_Store
+__MACOSX/
+Thumbs.db
+Desktop.ini
+
+# Sourcemaps (opcionales, descomenta si no los quieres en el repo)
+# *.map
+
+# Logs
+npm-debug.log*
+
+# Editor
+.vscode/
+*.swp
+*.swo

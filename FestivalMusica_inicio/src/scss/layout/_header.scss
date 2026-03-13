@@ -2,23 +2,43 @@
 @use "base/mixins" as m;
 
 .header {
-  background-color: v.$amarillo;
+  background-color: transparent; // Transparente por defecto
+  position: absolute; // Se superpone al video
+  width: 100%;
+  z-index: 100;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
 
-  @include m.tablet {
-    &.fijo {
-      left: 0;
-      top: 0;
-      position: fixed;
-      width: 100%;
-      box-shadow: 0.1rem 0.2rem 0.3rem #333;
+  // Cuando se hace scroll, se convierte en fijo con fondo amarillo pálido
+  &.fijo {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(231, 231, 16, 0.85); // Amarillo pálido semi-transparente
+    backdrop-filter: blur(10px); // Efecto glassmorphism
+    -webkit-backdrop-filter: blur(10px); // Soporte Safari/iOS
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
+    animation: slideDown 0.3s ease;
+
+    h1 {
+      color: v.$rojo;
+      opacity: 1; // Visible cuando el header es fijo
+      visibility: visible;
+    }
+
+    .navegacion-principal a {
+      color: v.$rojo;
     }
   }
 
   h1 {
-    color: v.$rojo;
+    color: v.$blanco;
     text-align: center;
+    text-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.5);
+    transition: color 0.4s ease, opacity 0.4s ease;
+    opacity: 0; // Invisible por defecto (sobre el video, evita duplicado)
+    visibility: hidden;
     @include m.tablet {
-      margin: 0; //Ya que por defecto los heading tienen margen y se lo eliminamos
+      margin: 0;
     }
   }
 
@@ -27,8 +47,18 @@
     @include m.tablet {
       display: flex;
       justify-content: space-between;
-      align-items: center; //Alinea los item y el header
+      align-items: center;
     }
+  }
+}
+
+// Animación de entrada del header fijo
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
   }
 }
 
@@ -41,17 +71,30 @@
   a {
     display: block;
     text-align: center;
-    color: v.$rojo;
+    color: v.$blanco; // Blanco por defecto (sobre el video)
+    text-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.5); // Sombra para legibilidad sobre el video
     font-size: 2.4rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid rgba(v.$blanco, 0.3); // Línea separadora blanca semi-transparente
+    transition: color 0.3s ease, background-color 0.3s ease, text-shadow 0.3s ease;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
     @include m.tablet {
-      //Para eliminar el margin entre los enlaces
       margin: 0rem;
+      padding: 0;
+      border-bottom: none;
     }
 
     &:hover {
-      // & con esto decimos que unimos la clase para el css
       color: v.$azul;
+      background-color: rgba(v.$blanco, 0.1); // Fondo sutil en hover
+      @include m.tablet {
+        background-color: transparent;
+      }
     }
   }
 }

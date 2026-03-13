@@ -23,6 +23,9 @@ const avif = require('gulp-avif');
 //JavaScript
 const terser = require('gulp-terser-js');
 
+// Servidor web
+const browserSync = require('browser-sync').create();
+
 function versionWebp(done){
 
   const opciones = {
@@ -92,8 +95,23 @@ function javascript(done){
 
 //Compilar con dev en npm
 function dev(done){
+
+  // Inicializar el servidor web
+  browserSync.init({
+    server: {
+      baseDir: './' // Sirve los archivos desde la carpeta del proyecto
+    },
+    port: 3000,
+    notify: false // Desactiva las notificaciones de Browser-Sync en el navegador
+  });
+
   watch('src/scss/**/*', css); 
   watch('src/js/**/*', javascript); /* Mandamos a llamar la funcion javascript */ 
+
+  // Recargar el navegador cuando cambien archivos HTML o los archivos compilados
+  watch('./*.html').on('change', browserSync.reload);
+  watch('build/css/**/*.css').on('change', browserSync.reload);
+  watch('build/js/**/*.js').on('change', browserSync.reload);
 
   done();
 }
