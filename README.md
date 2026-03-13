@@ -160,4 +160,4 @@ Este proyecto nació del deseo de que Chile pueda algún día ser sede del **Rol
 
 ## 📄 Licencia
 
-Este proyecto es de uso educativo y personal. Todos los derechos del nombre y marca **Rolling Loud** pertenecen a sus respectivos propietarios.
+Este proyecto fue desarrollado por **Lucciano Prado**. El código fuente es de uso educativo y personal. El nombre y marca **Rolling Loud** pertenecen a sus respectivos propietarios.
